@@ -16,19 +16,20 @@ export const Navbar = () => {
   };
   return (
     <>
-      <div>
-        <nav className="navbar bg-light">
+      <div >
+        <nav className="navbar bg-light h-14 bg-gradient-to-r from-gray-300 to-gray-100">
           <h2>My Todo List</h2>
-          <form className="d-flex">
+          <form className="">
+          <NavLink style={NavLinkStyles} className="move" to="/MainPage">
+              Main Todo
+            </NavLink>
             <NavLink style={NavLinkStyles} className="move" to="/">
               Home
             </NavLink>
-            <NavLink style={NavLinkStyles} className="move" to="/submitForm">
+            {/* <NavLink style={NavLinkStyles} className="move" to="/submitForm">
               Todo
-            </NavLink>
-            <NavLink style={NavLinkStyles} className="move" to="/MainPage">
-              Main Todo
-            </NavLink>
+            </NavLink> */}
+            
           </form>
         </nav>
       </div>

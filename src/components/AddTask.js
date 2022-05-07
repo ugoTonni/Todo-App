@@ -4,27 +4,27 @@ export const AddTask = ({ onAddTask }) => {
   const [text, setText] = useState("");
   return (
     <>
-      <div className="container">
-        <form >
-        <input
-        placeholder="Add new Task"
-        value={text}
-        onChange={(e) => setText(e.target.value)}
-      />
+      <div className="container bg-gradient-to-r from-sky-100 to-red-100 to-sky-100 my-0">
+        <form>
+          <input
+            className="italic px-2 rounded-md"
+            placeholder="Add new Task"
+            value={text}
+            onChange={(e) => setText(e.target.value)}
+          />
 
-      <button className="btn btn-outline-dark btn-sm" 
+          <button
+            className=" bg-gray-200 rounded-lg px-4 py-1 text-1xl m-3 hover:bg-gray-300"
             onClick={(e) => {
               e.preventDefault();
-          setText("");
-          onAddTask(text);
-        }}
-      >
-        Add Task
-      </button>
+              setText("");
+              onAddTask(text);
+            }}
+          >
+            Add Task
+          </button>
         </form>
-      
       </div>
-      
     </>
   );
 };

@@ -4,7 +4,7 @@ export const AddTask = ({ onAddTask }) => {
   const [text, setText] = useState("");
   return (
     <>
-      <div className="container bg-gradient-to-r from-sky-100 to-red-100 to-sky-100 my-0">
+      <div className="bg-gradient-to-r from-sky-100 to-red-100 to-sky-100 ">
         <form>
           <input
             className="italic px-2 rounded-md"
@@ -14,7 +14,7 @@ export const AddTask = ({ onAddTask }) => {
           />
 
           <button
-            className=" bg-gray-200 rounded-lg px-4 py-1 text-1xl m-3 hover:bg-gray-300"
+            className=" bg-gray-200 rounded-lg px-4 py-1 text-1xl mx-3  hover:bg-gray-300"
             onClick={(e) => {
               e.preventDefault();
               setText("");

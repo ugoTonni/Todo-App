@@ -8,22 +8,22 @@ const Todo = ({ task, onChange, onDelete }) => {
   if (isEditing) {
     taskContent = (
       <>
-          <input
-            className="border-black "
-            value={task.text}
-            onChange={(e) => {
-              onChange({
-                ...task,
-                text: e.target.value,
-              });
-            }}
-          />
-          <button
-            className="bg-green-200 px-4 py-1 rounded-lg ml-2 my-2 hover:bg-green-400"
-            onClick={() => setIsEditing(false)}
-          >
-            {" "}
-            Save
+        <input
+          className="border-black "
+          value={task.text}
+          onChange={(e) => {
+            onChange({
+              ...task,
+              text: e.target.value,
+            });
+          }}
+        />
+        <button
+          className="bg-green-200 px-4 py-2 rounded-lg ml-2 my-2 hover:bg-green-400"
+          onClick={() => setIsEditing(false)}
+        >
+          {" "}
+          Save
         </button>{" "}
       </>
     );
@@ -32,7 +32,7 @@ const Todo = ({ task, onChange, onDelete }) => {
       <>
         {task.text}
         <button
-          className="bg-gray-200 rounded-lg px-4 py-1 my-2 text-1xl ml-2 hover:bg-gray-400 "
+          className="bg-gray-200 rounded-lg px-4 py-2 my-2 text-1xl ml-2 hover:bg-gray-400 "
           onClick={() => setIsEditing(true)}
         >
           Edit
@@ -41,26 +41,28 @@ const Todo = ({ task, onChange, onDelete }) => {
     );
   }
   return (
-    <label>
-      <input
-        className="mr-6"
-        type="checkbox"
-        checked={task.done}
-        onChange={(e) => {
-          onChange({
-            ...task,
-            done: e.target.checked,
-          });
-        }}
-      />
-      {taskContent}
-      <button
-        className="bg-red-200 px-4 py-1 rounded-lg my-2 hover:bg-red-400"
-        onClick={() => onDelete(task.id)}
-      >
-        Delete
-      </button>
-    </label>
+    <div className="py-2 bg-gradient-to-r from-sky-100 to-red-100 to-sky-100 my-0">
+      <label>
+        <input
+          className="mr-6"
+          type="checkbox"
+          checked={task.done}
+          onChange={(e) => {
+            onChange({
+              ...task,
+              done: e.target.checked,
+            });
+          }}
+        />
+        {taskContent}
+        <button
+          className="bg-red-200 px-4 py-1 rounded-lg my-2 hover:bg-red-400"
+          onClick={() => onDelete(task.id)}
+        >
+          Delete
+        </button>
+      </label>
+    </div>
   );
 };
 

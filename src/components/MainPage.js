@@ -41,21 +41,22 @@ export const MainPage = () => {
   };
   return (
     <>
-      <div className="container w-auto mx-auto p-6 h-20 bg-gradient-to-r from-sky-100 to-red-100 to-sky-100">
+      <div className="container p-6 bg-contain h-1000 bg-gradient-to-r from-sky-100 to-red-100 to-sky-100">
         <div>
           <div className="flex-auto m-2 text-center">
             <h1 className="font-serif text-3xl"> Main Todo App </h1>
           </div>
+          <div >
+            <div className="my-2 mx-2 text-center text-2xl">
+              <AddTask onAddTask={handleAddTask} />
+            </div>
 
-          <div className="my-2 mx-2 text-center text-2xl">
-            <AddTask onAddTask={handleAddTask} />
+            <TaskList
+              tasks={tasks}
+              onChangeTask={handleChangeTask}
+              onDeleteTask={handleDeleteTask}
+            />
           </div>
-
-          <TaskList
-            tasks={tasks}
-            onChangeTask={handleChangeTask}
-            onDeleteTask={handleDeleteTask}
-          />
         </div>
       </div>
     </>

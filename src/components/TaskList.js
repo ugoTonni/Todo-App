@@ -4,7 +4,7 @@ import Todo from "./Todo";
 export const TaskList = ({ tasks, onChangeTask, onDeleteTask }) => {
   return (
     <>
-      <div className="bg-gradient-to-r from-sky-100 to-red-100 to-sky-100 my-0">
+      <div>
       <ul>
         
         {tasks.map(task => (
